@@ -1,5 +1,3 @@
-from urllib.parse import urlparse
-
 import pytest
 
 from bytes.config import get_settings
@@ -23,14 +21,13 @@ def test_save_raw_data_pastebin(
 
     query_filter = RawDataFilter(boefje_meta_id=meta.id)
     raws = meta_repository.get_raw(query_filter)
-    parsed_url = urlparse(raws[0].hash_retrieval_link)
 
     assert (
         raws[0].secure_hash == "sha512:bc4d1f0a71ba9bf2ab2b7520322f8e969c48d5ae99e84b4a60b850f61ce"
         "5b1e95e13f3ef6c43680fb03960f98799a92770e30591253784cc3213b194a73ea21d"
     )
     assert raws[0].hash_retrieval_link is not None
-    assert parsed_url.hostname == "pastebin.com"
+    assert "https://pastebin.com/" in raws[0].hash_retrieval_link
 
     retrieved_hash = pastebin_hash_repository.retrieve(raws[0].hash_retrieval_link)
 
