@@ -12,7 +12,7 @@ on:
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
-    runs-on: ['ubuntu-latest']
+    runs-on: ["ubuntu-latest"]
     permissions:
       # required for all workflows
       security-events: write
@@ -37,7 +37,7 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
-          queries: security-extended
+          queries: security-extended # Use security extended, when too many false positives we can switch back to default
 
       # Use the CodeQL tools for analyzing.
       - name: Perform CodeQL Analysis
