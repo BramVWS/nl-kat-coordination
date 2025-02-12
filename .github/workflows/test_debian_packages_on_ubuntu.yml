@@ -15,8 +15,7 @@ on:
 
 jobs:
   build-packages:
-    permissions:
-      contents: read
+    permissions: {}
     strategy:
       matrix:
         dist: [ubuntu]
@@ -65,8 +64,7 @@ jobs:
       matrix:
         os: [ubuntu-22.04]
 
-    permissions:
-      contents: read
+    permissions: {}
 
     env:
       PGPASSWORD: postgres # No password prompt
