@@ -72,6 +72,7 @@ jobs:
           path: "${{ matrix.module['name'] }}-coverage-unit/coverage.xml"
 
   sonar-cloud:
+    permissions: {}
     runs-on: ubuntu-latest
 
     needs:

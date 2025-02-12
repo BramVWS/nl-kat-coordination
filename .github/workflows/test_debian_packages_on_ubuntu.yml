@@ -57,14 +57,13 @@ jobs:
           path: ${{ matrix.package }}/build/kat-${{ matrix.package }}_${{ env.RELEASE_VERSION }}_amd64.deb
 
   test-deb-install:
+    permissions: {}
     needs: build-packages
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
         os: [ubuntu-22.04]
-
-    permissions: {}
 
     env:
       PGPASSWORD: postgres # No password prompt
