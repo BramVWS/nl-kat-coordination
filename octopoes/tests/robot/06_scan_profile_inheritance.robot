@@ -25,4 +25,4 @@ Get Scan Profile Inheritance
     ${response}    Get    ${OCTOPOES_URI}/scan_profiles/inheritance    params=${params}
     Should Be Equal As Integers    ${response.status_code}    200
     ${response_data}    Set Variable    ${response.json()}
-    RETURN    ${response_data}
+    RETURN     ${response_data}
