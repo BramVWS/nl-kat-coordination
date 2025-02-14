@@ -10,23 +10,29 @@ on:
 
 jobs:
   octopoes-tests:
-    permissions: {}
+    permissions: 
+      contents: read
     uses: minvws/nl-kat-coordination/.github/workflows/octopoes-tests.yml@main
   bytes-tests:
-    permissions: {}
+    permissions: 
+      contents: read
     uses: minvws/nl-kat-coordination/.github/workflows/bytes-tests.yml@main
   mula-tests:
-    permissions: {}
+    permissions: 
+      contents: read
     uses: minvws/nl-kat-coordination/.github/workflows/mula-tests.yml@main
   rocky-tests:
-    permissions: {}
+    permissions: 
+      contents: read
     uses: minvws/nl-kat-coordination/.github/workflows/rocky-tests.yml@main
   boefjes-tests:
-    permissions: {}
+    permissions: 
+      contents: read
     uses: minvws/nl-kat-coordination/.github/workflows/boefjes-tests.yml@main
 
   fix-coverage-reports:
-    permissions: {}
+    permissions: 
+      contents: read
     runs-on: ubuntu-latest
 
     needs:
@@ -78,7 +84,8 @@ jobs:
           path: "${{ matrix.module['name'] }}-coverage-unit/coverage.xml"
 
   sonar-cloud:
-    permissions: {}
+    permissions: 
+      contents: read
     runs-on: ubuntu-latest
 
     needs:
