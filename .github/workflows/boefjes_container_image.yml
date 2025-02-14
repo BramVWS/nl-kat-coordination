@@ -19,7 +19,7 @@ on:
 
 jobs:
   create_container_image:
-    permissions: 
+    permissions:
       contents: read
       packages: write
     runs-on: ubuntu-22.04

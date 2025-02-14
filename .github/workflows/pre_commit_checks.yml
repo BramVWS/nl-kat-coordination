@@ -12,7 +12,7 @@ on:
 
 jobs:
   pre-commit:
-    permissions: 
+    permissions:
       contents: read
     runs-on: ubuntu-latest
     steps:

@@ -19,7 +19,7 @@ on:
 
 jobs:
   test:
-    permissions: 
+    permissions:
       contents: read
     strategy:
       fail-fast: false

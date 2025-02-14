@@ -17,7 +17,7 @@ on:
 
 jobs:
   rtest:
-    permissions: 
+    permissions:
       contents: read
     runs-on: ubuntu-22.04
 

@@ -15,7 +15,7 @@ on:
 
 jobs:
   build-packages:
-    permissions: 
+    permissions:
       contents: read
     strategy:
       matrix:
@@ -58,7 +58,7 @@ jobs:
           path: ${{ matrix.package }}/build/kat-${{ matrix.package }}_${{ env.RELEASE_VERSION }}_amd64.deb
 
   test-deb-install:
-    permissions: 
+    permissions:
       contents: read
     needs: build-packages
     runs-on: ${{ matrix.os }}
